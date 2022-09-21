@@ -11,7 +11,8 @@ namespace DataAccess.Concrete.EF
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseMySql("Server=89.252.137.91;Database=skyticar_skyapp;Uid=skyticar_kutluhan;Pwd=Sky2021.;",
+            new MySqlServerVersion(new Version()));
             //MySql connectionString
         }
 

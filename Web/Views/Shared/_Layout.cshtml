@@ -25,6 +25,13 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+
+  <!--Datatable Css-->
+  <link rel="stylesheet" href="/datatable\datatable.min.css">
+  <link rel="stylesheet" href="/datatable\datatable.buttons.min.css">
+
+  <!--Main Css-->
+  <link rel="stylesheet" href="\main\css\main.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -166,5 +173,38 @@
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
+
+<!--Datatable Js-->
+<script src="/datatable\datatable.min.js"></script>
+<script src="/datatable\datatable.buttons.min.js"></script>
+<script src="/datatable\datatable.jszip.min.js"></script>
+<script src="/datatable\datatable.pdfmake.min.js"></script>
+<script src="/datatable\datatable.vfs-fonts.min.js"></script>
+<script src="/datatable\datatable.html5.min.js"></script>
+<script src="/datatable\datatable.print.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ],
+         "scrollX": true,
+         
+    } );
+      var imalatTarihiDesc = $('#example').dataTable();
+      imalatTarihiDesc.fnSort( [ [6,'desc'] ] );
+
+} );
+
+</script>
+
+<script>
+  $(".date").datepicker({
+    language: "tr"
+});
+</script>
+
 </body>
 </html>

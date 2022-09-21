@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Kg8i16CZvomlATZR1KS+AA7DJ3jcvE7oPdap2Kn+TgBePkCKPHy0NEEzBVUXciLUdX2DD6YyZg+r5ocRTwHiFg==",
+  "dgSpecHash": "F6dfE1tmq0z1wwPt2k0TdzAZ4M2HqVNN6wdFQ4bzzmJmAFH+9KCPSN3MKM6VRKLqIstho56IT8pC+x96/99+5A==",
   "success": true,
   "projectFilePath": "C:\\Users\\SKY\\Desktop\\skyapp\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,8 @@
     "C:\\Users\\SKY\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\SKY\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\SKY\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\SKY\\.nuget\\packages\\mysqlconnector\\2.1.2\\mysqlconnector.2.1.2.nupkg.sha512",
+    "C:\\Users\\SKY\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.2\\pomelo.entityframeworkcore.mysql.6.0.2.nupkg.sha512",
     "C:\\Users\\SKY\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\SKY\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\SKY\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"

@@ -1,0 +1,13 @@
+#order-ekle-btn{
+    position: fixed;
+    bottom: 95px;
+    right: 20px;
+}
+
+.order_acik {
+    color: green;
+  }
+  
+.order_kapali {
+    color: red;
+  }

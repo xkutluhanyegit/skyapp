@@ -1,1 +1,76 @@
-<h1>OSİpariş Detay</h1>
+@model List<Entities.Concrete.Order>
+
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr class="text-center">
+
+                <th>Durum</th>
+
+                <th>Müşteri</th>
+                <th>Marka</th>
+                <th>Model</th>
+                
+                <th>Sipariş Adet</th>
+                <th>Kesim Adet</th>
+
+                <th>İmalat Tarihi</th>
+                <th>Yükleme Tarihi</th>
+                <th>Güncelle</th>
+                <th>Sil</th>
+                
+                
+            </tr>
+        </thead>
+        <tbody>
+            
+            @foreach (var item in Model)
+            {
+                <tr class="text-center">
+
+                        <td>
+                            @if (item.status)
+                            {
+                                <span class="order_acik">● <span>Açık</span> </span>
+                            }
+                            else{
+                                <span class="order_kapali">● <span>Kapalı</span></span>
+                            }
+                            
+                        </td>
+
+                        <td>@item.Customer</td>
+                        <td>@item.Brand</td>
+                        <td>@item.Model</td>
+
+                        <td>@item.sCount</td>
+                        <td>@item.kCount</td>
+
+                        <td>@item.ProductDate</td>
+                        <td>@item.Deadline</td>
+                        <td>Güncelle</td>
+                        <td>Sil</td>
+                </tr>
+            }
+
+            </tbody>
+        <tfoot>
+            <tr class="text-center">
+
+                <th>Durum</th>
+
+                <th>Müşteri</th>
+                <th>Marka</th>
+                <th>Model</th>
+                
+                <th>Sipariş Adet</th>
+                <th>Kesim Adet</th>
+
+                <th>İmalat Tarihi</th>
+                <th>Yükleme Tarihi</th>
+                <th>Güncelle</th>
+                <th>Sil</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <a id="order-ekle-btn" class="btn btn-success" href="/order-ekle">Order Ekle</a>
