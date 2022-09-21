@@ -37,16 +37,16 @@ namespace Entities.Concrete
         [Required(ErrorMessage = "*Termin Tarihi boş bırakılamaz!")]
         public string Deadline { get; set; }
 
-        public bool status { get; set; } = true;
+        public bool status { get; set; } = false;
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
-        public string PhotoPath { get; set; }
+        public string? PhotoPath { get; set; }
 
 
         //Order Dist
 
-              private int _s28;
+        private int _s28;
         public int s28
         {
             get { 

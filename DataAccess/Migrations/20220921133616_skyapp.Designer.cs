@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220921123309_skyapp")]
+    [Migration("20220921133616_skyapp")]
     partial class skyapp
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,7 +44,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Model")
@@ -56,7 +55,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("PhotoPath")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("ProductDate")

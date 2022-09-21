@@ -21,6 +21,11 @@ namespace Business.Concrete
             _orderDal.Add(order);
         }
 
+        public Order Get(Guid id)
+        {
+            return _orderDal.Get(c=>c.ID == id);
+        }
+
         public List<Order> GetAll()
         {
             return _orderDal.GetAll();

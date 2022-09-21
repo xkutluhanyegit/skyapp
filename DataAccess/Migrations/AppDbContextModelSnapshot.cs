@@ -42,7 +42,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Model")
@@ -54,7 +53,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("PhotoPath")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("ProductDate")

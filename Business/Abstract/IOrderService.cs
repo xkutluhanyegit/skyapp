@@ -10,5 +10,6 @@ namespace Business.Abstract
     {
         void Add(Order order);
         List<Order> GetAll();
+        Order Get(Guid id);
     }
 }

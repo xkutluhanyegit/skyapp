@@ -1,7 +1,7 @@
 @model Entities.Concrete.Order
-            <div class="card card-primary">
+            <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Sipariş Ekleme Formu</h3>
+                <h3 class="card-title">Sipariş Güncelleme Formu</h3>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
@@ -239,8 +239,8 @@
                                 <label for="exampleInputFile">Resim Yükleme:</label>
                                 <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" name="file" class="custom-file-input">
-                                    <label class="custom-file-label">Resim Seç</label>
+                                    <input type="file" class="custom-file-input" id="imgInp">
+                                    <label class="custom-file-label" for="imgInp">Resim Seç</label>
                                 </div>
                                 </div>
                             </div>
@@ -255,7 +255,7 @@
                 <!-- /.card-body -->
 
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Kaydet</button>
+                  <button type="submit" class="btn btn-warning">Güncelle</button>
                 </div>
               </form>
             </div>
