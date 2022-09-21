@@ -37,7 +37,7 @@ namespace Entities.Concrete
         [Required(ErrorMessage = "*Termin Tarihi boş bırakılamaz!")]
         public string Deadline { get; set; }
 
-        public bool status { get; set; } = false;
+        public bool status { get; set; } = true;
 
         public string? Description { get; set; }
 

@@ -16336,6 +16336,16 @@
       "FilePath": "c:\\Users\\SKY\\Desktop\\skyapp\\Web\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\SKY\\Desktop\\skyapp\\Web\\Views\\Cutting\\index.cshtml",
+      "TargetPath": "Views\\Cutting\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\SKY\\Desktop\\skyapp\\Web\\Views\\Kesimhane\\index.cshtml",
+      "TargetPath": "Views\\Kesimhane\\index.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"
