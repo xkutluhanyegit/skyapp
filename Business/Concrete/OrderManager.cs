@@ -21,6 +21,11 @@ namespace Business.Concrete
             _orderDal.Add(order);
         }
 
+        public void Delete(Order order)
+        {
+            _orderDal.Delete(order);
+        }
+
         public Order Get(Guid id)
         {
             return _orderDal.Get(c=>c.ID == id);
@@ -29,6 +34,11 @@ namespace Business.Concrete
         public List<Order> GetAll()
         {
             return _orderDal.GetAll();
+        }
+
+        public void Update(Order order)
+        {
+             _orderDal.Update(order);
         }
     }
 }

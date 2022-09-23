@@ -1,19 +1,17 @@
 @model Entities.Concrete.Order
-            <div class="card card-warning">
+
+            <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Sipariş Güncelleme Formu</h3>
+                <h3 class="card-title">Sipariş Detay | Marka: @Model.Brand.ToUpper() , Model: @Model.Model.ToUpper()</h3>
               </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form asp-controller="Order" asp-action="Add" method="post" enctype="multipart/form-data">
+
                 <div class="card-body">
                     <div class="col-md-6 float-left border-left border-right">
-
                         <div class="row">
                             <div class="col-6 float-left">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Müşteri</label>
-                                    <input asp-for="@Model.Customer" type="text" class="form-control" placeholder="Müşteri">
+                                    <label>Müşteri: <span>@Model.Customer.ToUpper()</span></label>
+                                    
                                     <span class="text-danger" style="font-size: 12px;" asp-validation-for="@Model.Customer"></span>
                                 </div>
                                 
@@ -252,11 +250,8 @@
                             </div>
                     </div>
                 </div>
-                <!-- /.card-body -->
-
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-warning">Güncelle</button>
+                  
                 </div>
-              </form>
             </div>
 

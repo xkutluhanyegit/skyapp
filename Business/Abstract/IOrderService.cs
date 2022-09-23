@@ -9,6 +9,8 @@ namespace Business.Abstract
     public interface IOrderService
     {
         void Add(Order order);
+        void Delete(Order order);
+        void Update(Order order);
         List<Order> GetAll();
         Order Get(Guid id);
     }

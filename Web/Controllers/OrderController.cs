@@ -17,6 +17,7 @@ namespace Web.Controllers
         private readonly ILogger<OrderController> _logger;
         
         OrderManager om = new OrderManager(new EfOrderDal());
+       
 
         public OrderController(ILogger<OrderController> logger)
         {
@@ -56,10 +57,42 @@ namespace Web.Controllers
           
         }
 
+        
         [Route("order-detay")]
         public IActionResult Details(Guid id)
         {
             return View(om.Get(id));
+        }
+
+        [Route("order-guncelleme")]
+        [HttpGet]
+        public IActionResult Update(Guid id)
+        {
+          return View(om.Get(id));
+        }
+
+        [Route("order-guncelleme")]
+        [HttpPost]
+        public IActionResult Update(Order order)
+        {
+            order.kCount = order.k28+order.k30+order.k32+order.k34+order.k36+order.k38+order.k40+order.k42+order.k44+order.k46+order.k48+order.k50;
+            order.sCount = order.s28+order.s30+order.s32+order.s34+order.s36+order.s38+order.s40+order.s42+order.s44+order.s46+order.s48+order.s50;
+
+            if (ModelState.IsValid)
+            {
+                om.Update(order);
+                return RedirectToAction("index","order");
+            }
+            else{
+                return View(order);
+            }
+        }
+
+        [Route("order-sil")]
+        public IActionResult Delete(Guid id)
+        {
+          om.Delete(om.Get(id));
+          return RedirectToAction("index","order");
         }
 
         

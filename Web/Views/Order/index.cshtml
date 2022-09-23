@@ -15,8 +15,7 @@
 
                 <th>İmalat Tarihi</th>
                 <th>Yükleme Tarihi</th>
-                <th>Güncelle</th>
-                <th>Sil</th>
+                <th>Detay - Güncelle - Sil</th>
                 
                 
             </tr>
@@ -47,8 +46,12 @@
 
                         <td>@item.ProductDate</td>
                         <td>@item.Deadline</td>
-                        <td><a href="/order-detay?id=@item.ID">Detay</a></td>
-                        <td>Sil</td>
+                        <td>
+                            <a href="/order-detay?id=@item.ID"><i  class="fa-solid fa-circle-info text-success"></i></a> 
+                          | <a href="/order-guncelleme?id=@item.ID"><i class="fa-solid fa-arrows-rotate text-warning"></i></a> 
+                          | <a href="/order-sil?id=@item.ID"><i  class="fa-solid fa-trash text-danger"></i></a>
+                        </td>
+                        
                 </tr>
             }
 
@@ -67,8 +70,7 @@
 
                 <th>İmalat Tarihi</th>
                 <th>Yükleme Tarihi</th>
-                <th>Güncelle</th>
-                <th>Sil</th>
+                <th>Detay - Güncelle - Sil</th>
             </tr>
         </tfoot>
     </table>
