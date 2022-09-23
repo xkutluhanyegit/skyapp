@@ -17,11 +17,13 @@ namespace Web.Controllers
         private readonly ILogger<OrderController> _logger;
         
         OrderManager om = new OrderManager(new EfOrderDal());
-       
 
-        public OrderController(ILogger<OrderController> logger)
+        private readonly IWebHostEnvironment _env;
+
+        public OrderController(ILogger<OrderController> logger, IWebHostEnvironment env)
         {
             _logger = logger;
+            _env = env;
         }
 
         [Route("siparis-detay")]
@@ -40,7 +42,7 @@ namespace Web.Controllers
 
         [Route("order-ekle")]
         [HttpPost]
-        public IActionResult Add(Order order)
+        public IActionResult Add(Order order,IFormFile file)
         {
             order.ID = Guid.NewGuid();
             order.kCount = order.k28+order.k30+order.k32+order.k34+order.k36+order.k38+order.k40+order.k42+order.k44+order.k46+order.k48+order.k50;
@@ -48,6 +50,14 @@ namespace Web.Controllers
 
             if (ModelState.IsValid)
             {
+                var dir = _env.WebRootPath+"//Images//OrderImages";
+                var orderImgName = Guid.NewGuid().ToString()+".png";
+                using (var fileStream = new FileStream(Path.Combine(dir,orderImgName),FileMode.Create,FileAccess.ReadWrite))
+                {
+                    file.CopyTo(fileStream);
+                
+                }
+                order.PhotoPath = "/Images/OrderImages/"+orderImgName;
                 om.Add(order);
                 return RedirectToAction("index","order");
             }
@@ -73,13 +83,21 @@ namespace Web.Controllers
 
         [Route("order-guncelleme")]
         [HttpPost]
-        public IActionResult Update(Order order)
+        public IActionResult Update(Order order,IFormFile file)
         {
             order.kCount = order.k28+order.k30+order.k32+order.k34+order.k36+order.k38+order.k40+order.k42+order.k44+order.k46+order.k48+order.k50;
             order.sCount = order.s28+order.s30+order.s32+order.s34+order.s36+order.s38+order.s40+order.s42+order.s44+order.s46+order.s48+order.s50;
 
             if (ModelState.IsValid)
             {
+                var dir = _env.WebRootPath+"//Images//OrderImages";
+                var orderImgName = Guid.NewGuid().ToString()+".png";
+                using (var fileStream = new FileStream(Path.Combine(dir,orderImgName),FileMode.Create,FileAccess.ReadWrite))
+                {
+                    file.CopyTo(fileStream);
+                
+                }
+                order.PhotoPath = "/Images/OrderImages/"+orderImgName;
                 om.Update(order);
                 return RedirectToAction("index","order");
             }

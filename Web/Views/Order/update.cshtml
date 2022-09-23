@@ -1,3 +1,263 @@
 @model Entities.Concrete.Order
-    
+            <div class="card card-warning">
+              <div class="card-header">
+                <h3 class="card-title">Sipariş Güncelleme Formu</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form asp-controller="Order" asp-action="Update" method="post" enctype="multipart/form-data">
+                <div class="card-body">
+                    <div class="col-md-6 float-left border-left border-right">
+                        @Html.HiddenFor(m=>m.ID)
+                        <div class="row">
+                            <div class="col-6 float-left">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Müşteri</label>
+                                    <input asp-for="@Model.Customer" type="text" class="form-control" placeholder="Müşteri">
+                                    <span class="text-danger" style="font-size: 12px;" asp-validation-for="@Model.Customer"></span>
+                                </div>
+                                
+                            </div>
+                            <div class="col-6 float-left">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Marka</label>
+                                    <input asp-for="@Model.Brand" type="text" class="form-control" placeholder="Marka">
+                                    <span class="text-danger" style="font-size: 12px;" asp-validation-for="@Model.Brand"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 float-left">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Model</label>
+                                    <input asp-for="@Model.Model" type="text" class="form-control" placeholder="Model">
+                                    <span class="text-danger" style="font-size: 12px;" asp-validation-for="@Model.Model"></span>
+                                </div>
+                            </div>
+                            <div class="col-6 float-left">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Renk veya Boy</label>
+                                    <input asp-for="@Model.ColorOrInch" type="text" class="form-control" placeholder="Renk veya Boy">
+                                    <span class="text-danger" style="font-size: 12px;" asp-validation-for="@Model.ColorOrInch" ></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 float-left">
+                                <div class="form-group">
+                                    <label>Paket Tipi:</label>
+                                    <select asp-for="@Model.PackageType" class="form-control">
+                                        <option selected value="Askı">Askı</option>
+                                        <option value="Koli">Koli</option>
+                                    </select>
+                                    <span class="text-danger" style="font-size: 12px;" asp-validation-for="@Model.PackageType"></span>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-6 float-left">
+                                <div class="form-group">
+                                    <label>Yıkama Durumu:</label>
+                                    <select asp-for="@Model.WashType" class="form-control">
+                                        <option selected value="Yıkamalı">Yıkamalı</option>
+                                        <option value="Yıkamasız">Yıkamasız</option>
+                                    </select>
+                                    <span class="text-danger" style="font-size: 12px;" asp-validation-for="@Model.WashType"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 float-left">
+                                <div class="form-group">
+                                    <label>İstenen Sipariş Adet:</label>
+                                    <input class="form-control" placeholder="Beden dağılımlı sipariş adetine tıklayın!" disabled>
+                                    <a class="" data-toggle="collapse" href="#siparisCollapse" role="button" aria-expanded="false" aria-controls="siparisCollapse">
+                                        Beden dağılımlı sipariş adeti ↓
+                                    </a>
+                                    <div class="collapse" id="siparisCollapse">
+                                        <div class="card card-body">
+                                            <div class="col-md">
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">28 / 2XS</p>
+                                                    <input asp-for="@Model.s28"  min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">30 / XS</p>
+                                                    <input asp-for="@Model.s30" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">32 / S</p>
+                                                    <input asp-for="@Model.s32" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">34 / M</p>
+                                                    <input asp-for="@Model.s34" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                            </div>         
+                                            <div class="col-md">
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">36 / L</p>
+                                                    <input asp-for="@Model.s36" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">38 / XL</p>
+                                                    <input asp-for="@Model.s38" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">40 / 2XL</p>
+                                                    <input asp-for="@Model.s40" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">42 / 3XL</p>
+                                                    <input asp-for="@Model.s42" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">44</p>
+                                                    <input asp-for="@Model.s44" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">46</p>
+                                                    <input asp-for="@Model.s46" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">48</p>
+                                                    <input asp-for="@Model.s48" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">50</p>
+                                                    <input asp-for="@Model.s50" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                            </div>                             
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 float-left">
+                                <div class="form-group">
+                                    <label>Planlanan Kesim Adet:</label>
+                                    <input class="form-control" placeholder="Beden dağılımlı kesim adetine tıklayın!" disabled>
+                                    <a class="" data-toggle="collapse" href="#kesimCollapse" role="button" aria-expanded="false" aria-controls="kesimCollapse">
+                                        Beden dağılımlı kesim adeti ↓
+                                    </a>
+                                    <div class="collapse" id="kesimCollapse">
+                                        <div class="card card-body">
+                                            <div class="col-md">
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">28 / 2XS</p>
+                                                    <input asp-for="@Model.k28" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">30 / XS</p>
+                                                    <input asp-for="@Model.k30" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">32 / S</p>
+                                                    <input asp-for="@Model.k32" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">34 / M</p>
+                                                    <input asp-for="@Model.k34" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                            </div>         
+                                            <div class="col-md">
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">36 / L</p>
+                                                    <input asp-for="@Model.k36" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">38 / XL</p>
+                                                    <input asp-for="@Model.k38" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">40 / 2XL</p>
+                                                    <input asp-for="@Model.k40" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">42 / 3XL</p>
+                                                    <input asp-for="@Model.k42" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                            </div>
+                                            <div class="col-md">
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">44</p>
+                                                    <input asp-for="@Model.k44" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">46</p>
+                                                    <input asp-for="@Model.k46" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">48</p>
+                                                    <input asp-for="@Model.k48" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                                <div class="col-3 border bg-primary float-left">
+                                                    <p class="text-center">50</p>
+                                                    <input asp-for="@Model.k50" min="0" max="10000" value="0" class="mb-4 form-control" type="number" style="width: 100%; height:100%">
+                                                </div>
+                                            </div>                             
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 float-left">
+                                <div class="form-group">
+                                    <label>İmalat Tarihi:</label>
+                                    <input asp-for="@Model.ProductDate" class="form-control" type="date">
+                                    <span class="text-danger" style="font-size: 12px;" asp-validation-for="@Model.ProductDate"></span>
+                                </div>
+                            </div>
+                            <div class="col-6 float-left">
+                                <div class="form-group">
+                                    <label>Termin:</label>
+                                    <input asp-for="@Model.Deadline" class="form-control" type="date">
+                                    <span class="text-danger" style="font-size: 12px;" asp-validation-for="@Model.Deadline"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col float-left">
+                                <div class="form-group">
+                                    <label>Açıklama:</label>
+                                    <textarea asp-for="@Model.Description" class="form-control"></textarea>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6 float-left border-left border-right">
+                            <div class="form-group">
+                                <label for="exampleInputFile">Resim Yükleme:</label>
+                                <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" name="file" id="imgInp" class="custom-file-input">
+                                    <label class="custom-file-label">Resim Seç</label>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="text-center" style="max-height:400px">
+                                    <img id="blah" src="@Model.PhotoPath" style="max-height:400px"  class="img-fluid" alt="" />
+                                </div>
+                            </div>
+                            
+                    </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-warning">Güncelle</button>
+                </div>
+              </form>
+            </div>
 
