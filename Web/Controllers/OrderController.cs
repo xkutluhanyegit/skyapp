@@ -30,6 +30,7 @@ namespace Web.Controllers
         [Route("siparis-detay")]
         public IActionResult Index()
         {
+            
             return View(om.GetAll());
         }
 
@@ -66,7 +67,9 @@ namespace Web.Controllers
                 
                 }
                 
-                om.Add(order);
+                
+                var res = om.Add(order);
+                ViewBag.message = res.Message;
                 return RedirectToAction("index","order");
             }
             else{

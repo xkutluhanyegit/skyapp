@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj": {}
+    "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj": {
+    "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\K\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\K\\Desktop\\skyapp\\Core\\obj\\",
+        "projectPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\kutlu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\K\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\kutlu\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +49,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -64,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

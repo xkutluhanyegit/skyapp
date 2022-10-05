@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Business.Constant;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 
@@ -16,14 +18,19 @@ namespace Business.Concrete
         {
             _orderDal = orderDal;
         }
-        public void Add(Order order)
+        public IResult Add(Order order)
         {
+            //Business code
             _orderDal.Add(order);
+            return new SuccessResult(Messages.AddedSuccess);
         }
 
-        public void Delete(Order order)
+        public IResult Delete(Order order)
         {
+            //Business code
             _orderDal.Delete(order);
+            return new SuccessResult(Messages.AddedSuccess);
+
         }
 
         public Order Get(Guid id)
@@ -33,12 +40,15 @@ namespace Business.Concrete
 
         public List<Order> GetAll()
         {
+            
             return _orderDal.GetAll();
         }
 
-        public void Update(Order order)
+        public IResult Update(Order order)
         {
+            //Business code
              _orderDal.Update(order);
+             return new SuccessResult(Messages.AddedSuccess);
         }
     }
 }
