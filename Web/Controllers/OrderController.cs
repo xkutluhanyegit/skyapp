@@ -8,6 +8,7 @@ using DataAccess.Concrete.EF;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Web.Models;
 
 namespace Web.Controllers
 {
@@ -42,7 +43,7 @@ namespace Web.Controllers
 
         [Route("order-ekle")]
         [HttpPost]
-        public IActionResult Add(Order order,IFormFile file)
+        public IActionResult Add(OrderVM order)
         {
             order.ID = Guid.NewGuid();
             order.kCount = order.k28+order.k30+order.k32+order.k34+order.k36+order.k38+order.k40+order.k42+order.k44+order.k46+order.k48+order.k50;
@@ -54,10 +55,17 @@ namespace Web.Controllers
                 var orderImgName = Guid.NewGuid().ToString()+".png";
                 using (var fileStream = new FileStream(Path.Combine(dir,orderImgName),FileMode.Create,FileAccess.ReadWrite))
                 {
-                    file.CopyTo(fileStream);
+                   if (order.photo!=null)
+                   {
+                     order.photo.CopyTo(fileStream);
+                     order.PhotoPath = "/Images/OrderImages/"+orderImgName;
+                   }
+                   else{
+                    order.PhotoPath = "/Images/OrderImages/no-img.png";
+                   }
                 
                 }
-                order.PhotoPath = "/Images/OrderImages/"+orderImgName;
+                
                 om.Add(order);
                 return RedirectToAction("index","order");
             }
