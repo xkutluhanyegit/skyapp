@@ -7,7 +7,7 @@ namespace Core.Utilities.Results
 {
     public class SuccessResult : Result
     {
-        public SuccessResult() : base(true)
+        public SuccessResult(bool success) : base(true)
         {
         }
 

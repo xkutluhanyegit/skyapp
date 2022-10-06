@@ -18,37 +18,45 @@ namespace Business.Concrete
         {
             _orderDal = orderDal;
         }
+
         public IResult Add(Order order)
         {
-            //Business code
+            if (order.Brand.Length < 2)
+            {
+                return new ErrorResult(Messages.AddedError);
+            }
             _orderDal.Add(order);
             return new SuccessResult(Messages.AddedSuccess);
         }
 
         public IResult Delete(Order order)
         {
-            //Business code
             _orderDal.Delete(order);
-            return new SuccessResult(Messages.AddedSuccess);
+            return new SuccessResult("Başarıyla silindi");
 
         }
 
-        public Order Get(Guid id)
+        public IDataResult<Order> Get(Guid id)
+        
         {
-            return _orderDal.Get(c=>c.ID == id);
-        }
-
-        public List<Order> GetAll()
-        {
+            var data = _orderDal.Get(o=>o.ID == id);
+            if(data==null){
+                return new ErrorDataResult<Order>(data,"Order bulunamadı!");
+            }
             
-            return _orderDal.GetAll();
+            return new SuccessDataResult<Order>(data);
+        }
+
+        public IDataResult<List<Order>> GetAll()
+        {
+            var res = new DataResult<List<Order>>(_orderDal.GetAll(),true,"Order listeleme işlemi başarılı");
+            return res;
         }
 
         public IResult Update(Order order)
         {
-            //Business code
-             _orderDal.Update(order);
-             return new SuccessResult(Messages.AddedSuccess);
+            _orderDal.Update(order);
+            return new SuccessResult("Güncelleme başarılı");
         }
     }
 }

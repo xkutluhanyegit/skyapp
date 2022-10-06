@@ -33,8 +33,8 @@ namespace Web.Controllers
         [Route("siparis-detay")]
         public IActionResult Index()
         {
-            
-            return View(_orderService.GetAll());
+            var res = _orderService.GetAll();
+            return View(res.Data);
         }
 
         [Route("order-ekle")]
@@ -70,11 +70,17 @@ namespace Web.Controllers
                 
                 }
                 
-                
                 var res = _orderService.Add(order);
-                TempData["message"] = res.Message;
+                if (res.Success)
+                {
+                    return RedirectToAction("index","order");
+                }
+                else{
+                    return View(order);
+                }
                 
-                return RedirectToAction("index","order");
+                
+                
             }
             else{
                 return View(order);
@@ -86,14 +92,20 @@ namespace Web.Controllers
         [Route("order-detay")]
         public IActionResult Details(Guid id)
         {
-            return View(_orderService.Get(id));
+            var res =_orderService.Get(id);
+            if (res.Success==false)
+            {
+                return RedirectToAction("index","home");
+            }
+            return View(res.Data);
         }
 
         [Route("order-guncelleme")]
         [HttpGet]
         public IActionResult Update(Guid id)
         {
-          return View(_orderService.Get(id));
+            var res = _orderService.Get(id);
+          return View(res.Data);
         }
 
         [Route("order-guncelleme")]
@@ -124,7 +136,9 @@ namespace Web.Controllers
         [Route("order-sil")]
         public IActionResult Delete(Guid id)
         {
-          _orderService.Delete(_orderService.Get(id));
+            var res = _orderService.Get(id);
+            _orderService.Delete(res.Data);
+
           return RedirectToAction("index","order");
         }
 
