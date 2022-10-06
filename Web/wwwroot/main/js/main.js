@@ -4,3 +4,5 @@ imgInp.onchange = evt => {
       blah.src = URL.createObjectURL(file)
     }
   }
+
+  

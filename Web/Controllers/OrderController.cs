@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Business.Abstract;
 using Business.Concrete;
 using DataAccess.Concrete.EF;
 using Entities.Concrete;
@@ -17,21 +18,23 @@ namespace Web.Controllers
     {
         private readonly ILogger<OrderController> _logger;
         
-        OrderManager om = new OrderManager(new EfOrderDal());
+        
 
         private readonly IWebHostEnvironment _env;
+        IOrderService _orderService;
 
-        public OrderController(ILogger<OrderController> logger, IWebHostEnvironment env)
+        public OrderController(ILogger<OrderController> logger, IWebHostEnvironment env,IOrderService orderService)
         {
             _logger = logger;
             _env = env;
+            _orderService = orderService;
         }
 
         [Route("siparis-detay")]
         public IActionResult Index()
         {
             
-            return View(om.GetAll());
+            return View(_orderService.GetAll());
         }
 
         [Route("order-ekle")]
@@ -68,8 +71,9 @@ namespace Web.Controllers
                 }
                 
                 
-                var res = om.Add(order);
-                ViewBag.message = res.Message;
+                var res = _orderService.Add(order);
+                TempData["message"] = res.Message;
+                
                 return RedirectToAction("index","order");
             }
             else{
@@ -82,14 +86,14 @@ namespace Web.Controllers
         [Route("order-detay")]
         public IActionResult Details(Guid id)
         {
-            return View(om.Get(id));
+            return View(_orderService.Get(id));
         }
 
         [Route("order-guncelleme")]
         [HttpGet]
         public IActionResult Update(Guid id)
         {
-          return View(om.Get(id));
+          return View(_orderService.Get(id));
         }
 
         [Route("order-guncelleme")]
@@ -109,7 +113,7 @@ namespace Web.Controllers
                 
                 }
                 order.PhotoPath = "/Images/OrderImages/"+orderImgName;
-                om.Update(order);
+                _orderService.Update(order);
                 return RedirectToAction("index","order");
             }
             else{
@@ -120,7 +124,7 @@ namespace Web.Controllers
         [Route("order-sil")]
         public IActionResult Delete(Guid id)
         {
-          om.Delete(om.Get(id));
+          _orderService.Delete(_orderService.Get(id));
           return RedirectToAction("index","order");
         }
 

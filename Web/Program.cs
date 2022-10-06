@@ -1,7 +1,16 @@
+using Business.Abstract;
+using Business.Concrete;
+using DataAccess.Abstract;
+using DataAccess.Concrete.EF;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//IOC
+builder.Services.AddSingleton<IOrderService,OrderManager>();
+builder.Services.AddSingleton<IOrderDal,EfOrderDal>();
 
 var app = builder.Build();
 
