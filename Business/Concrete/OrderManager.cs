@@ -49,8 +49,12 @@ namespace Business.Concrete
 
         public IDataResult<List<Order>> GetAll()
         {
-            var res = new DataResult<List<Order>>(_orderDal.GetAll(),true,"Order listeleme işlemi başarılı");
-            return res;
+            if (DateTime.Now.Hour == 21)
+            {
+                return new ErrorDataResult<List<Order>>("Sistem Bakımda!");
+            }
+           
+            return new SuccessDataResult<List<Order>>(_orderDal.GetAll());
         }
 
         public IResult Update(Order order)

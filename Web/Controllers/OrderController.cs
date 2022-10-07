@@ -49,7 +49,6 @@ namespace Web.Controllers
         [HttpPost]
         public IActionResult Add(OrderVM order)
         {
-            order.ID = Guid.NewGuid();
             order.kCount = order.k28+order.k30+order.k32+order.k34+order.k36+order.k38+order.k40+order.k42+order.k44+order.k46+order.k48+order.k50;
             order.sCount = order.s28+order.s30+order.s32+order.s34+order.s36+order.s38+order.s40+order.s42+order.s44+order.s46+order.s48+order.s50;
 

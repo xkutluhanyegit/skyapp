@@ -862,19 +862,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kutlu\\.nuget\\packages\\": {}
+    "C:\\Users\\K\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kutlu\\Desktop\\skyapp\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\K\\Desktop\\skyapp\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\kutlu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\DataAccess\\obj\\",
+      "projectPath": "C:\\Users\\K\\Desktop\\skyapp\\DataAccess\\DataAccess.csproj",
+      "packagesPath": "C:\\Users\\K\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\K\\Desktop\\skyapp\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kutlu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\K\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -886,11 +886,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj"
+            "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj"
             },
-            "C:\\Users\\kutlu\\Desktop\\skyapp\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Entities\\Entities.csproj"
+            "C:\\Users\\K\\Desktop\\skyapp\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\K\\Desktop\\skyapp\\Entities\\Entities.csproj"
             }
           }
         }
