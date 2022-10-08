@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "FluentValidation/11.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore/6.0.9": {
         "type": "package",
         "dependencies": {
@@ -251,6 +264,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "FluentValidation": "11.2.2",
           "Microsoft.EntityFrameworkCore": "6.0.9"
         },
         "compile": {
@@ -263,6 +277,27 @@
     }
   },
   "libraries": {
+    "FluentValidation/11.2.2": {
+      "sha512": "5QEte2BUZZF6Sezeekr7Zu1THfgpxU7pmuL2SjIrajuGMah+pxPGiRiLtw+x/tSUSSVmcv9LrUe41lKu4l0n4A==",
+      "type": "package",
+      "path": "fluentvalidation/11.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.11.2.2.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net5.0/FluentValidation.dll",
+        "lib/net5.0/FluentValidation.xml",
+        "lib/net6.0/FluentValidation.dll",
+        "lib/net6.0/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml",
+        "lib/netstandard2.1/FluentValidation.dll",
+        "lib/netstandard2.1/FluentValidation.xml"
+      ]
+    },
     "Microsoft.EntityFrameworkCore/6.0.9": {
       "sha512": "3QxYF6TR14O3cSZitdzM10Smsw+hweLXyB45PN4ZVjrX4GqzUoGZ0ZC06r0ST7O7SgYxNjxw34ay5XXbBTX86A==",
       "type": "package",
@@ -598,19 +633,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kutlu\\.nuget\\packages\\": {}
+    "C:\\Users\\K\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kutlu\\Desktop\\skyapp\\Entities\\Entities.csproj",
+      "projectUniqueName": "C:\\Users\\K\\Desktop\\skyapp\\Entities\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Entities\\Entities.csproj",
-      "packagesPath": "C:\\Users\\kutlu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Entities\\obj\\",
+      "projectPath": "C:\\Users\\K\\Desktop\\skyapp\\Entities\\Entities.csproj",
+      "packagesPath": "C:\\Users\\K\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\K\\Desktop\\skyapp\\Entities\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kutlu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\K\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -622,8 +657,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj"
+            "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj"
             }
           }
         }

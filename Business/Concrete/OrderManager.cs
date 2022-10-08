@@ -4,9 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
 using Business.Constant;
+using Business.ValidationRules.FluentValidation;
+using Core.CrossCutting.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using FluentValidation;
 
 namespace Business.Concrete
 {
@@ -21,10 +24,11 @@ namespace Business.Concrete
 
         public IResult Add(Order order)
         {
-            if (order.Brand.Length < 2)
-            {
-                return new ErrorResult(Messages.AddedError);
-            }
+
+            ValidationTool.Validate(new OrderValidator(),order);
+            
+            //business code
+
             _orderDal.Add(order);
             return new SuccessResult(Messages.AddedSuccess);
         }
@@ -40,6 +44,7 @@ namespace Business.Concrete
         
         {
             var data = _orderDal.Get(o=>o.ID == id);
+
             if(data==null){
                 return new ErrorDataResult<Order>(data,"Order bulunamadı!");
             }
@@ -54,7 +59,7 @@ namespace Business.Concrete
                 return new ErrorDataResult<List<Order>>("Sistem Bakımda!");
             }
            
-            return new SuccessDataResult<List<Order>>(_orderDal.GetAll());
+            return new SuccessDataResult<List<Order>>(_orderDal.GetAll(),"Ürünler Listelendi!");
         }
 
         public IResult Update(Order order)

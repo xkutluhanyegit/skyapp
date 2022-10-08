@@ -60,6 +60,19 @@
           }
         }
       },
+      "FluentValidation/11.2.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/FluentValidation.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore/6.0.9": {
         "type": "package",
         "dependencies": {
@@ -1811,6 +1824,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "FluentValidation": "11.2.2",
           "Microsoft.EntityFrameworkCore": "6.0.9"
         },
         "compile": {
@@ -1913,6 +1927,27 @@
         "lib/netstandard1.5/Castle.Core.dll",
         "lib/netstandard1.5/Castle.Core.xml",
         "readme.txt"
+      ]
+    },
+    "FluentValidation/11.2.2": {
+      "sha512": "5QEte2BUZZF6Sezeekr7Zu1THfgpxU7pmuL2SjIrajuGMah+pxPGiRiLtw+x/tSUSSVmcv9LrUe41lKu4l0n4A==",
+      "type": "package",
+      "path": "fluentvalidation/11.2.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "fluent-validation-icon.png",
+        "fluentvalidation.11.2.2.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net5.0/FluentValidation.dll",
+        "lib/net5.0/FluentValidation.xml",
+        "lib/net6.0/FluentValidation.dll",
+        "lib/net6.0/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml",
+        "lib/netstandard2.1/FluentValidation.dll",
+        "lib/netstandard2.1/FluentValidation.xml"
       ]
     },
     "Microsoft.EntityFrameworkCore/6.0.9": {
@@ -5964,23 +5999,24 @@
       "Autofac.Extras.DynamicProxy >= 6.0.1",
       "Core >= 1.0.0",
       "DataAccess >= 1.0.0",
-      "Entities >= 1.0.0"
+      "Entities >= 1.0.0",
+      "FluentValidation >= 11.2.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kutlu\\.nuget\\packages\\": {}
+    "C:\\Users\\K\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kutlu\\Desktop\\skyapp\\Business\\Business.csproj",
+      "projectUniqueName": "C:\\Users\\K\\Desktop\\skyapp\\Business\\Business.csproj",
       "projectName": "Business",
-      "projectPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Business\\Business.csproj",
-      "packagesPath": "C:\\Users\\kutlu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Business\\obj\\",
+      "projectPath": "C:\\Users\\K\\Desktop\\skyapp\\Business\\Business.csproj",
+      "packagesPath": "C:\\Users\\K\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\K\\Desktop\\skyapp\\Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\kutlu\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\K\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -5992,14 +6028,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj"
+            "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj"
             },
-            "C:\\Users\\kutlu\\Desktop\\skyapp\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\K\\Desktop\\skyapp\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\K\\Desktop\\skyapp\\DataAccess\\DataAccess.csproj"
             },
-            "C:\\Users\\kutlu\\Desktop\\skyapp\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Entities\\Entities.csproj"
+            "C:\\Users\\K\\Desktop\\skyapp\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\K\\Desktop\\skyapp\\Entities\\Entities.csproj"
             }
           }
         }
@@ -6021,6 +6057,10 @@
           "Autofac.Extras.DynamicProxy": {
             "target": "Package",
             "version": "[6.0.1, )"
+          },
+          "FluentValidation": {
+            "target": "Package",
+            "version": "[11.2.2, )"
           }
         },
         "imports": [
