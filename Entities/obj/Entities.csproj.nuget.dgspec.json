@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\K\\Desktop\\skyapp\\Entities\\Entities.csproj": {}
+    "C:\\Users\\kutlu\\Desktop\\skyapp\\Entities\\Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj": {
+    "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\K\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\K\\Desktop\\skyapp\\Core\\obj\\",
+        "projectPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\kutlu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\K\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\kutlu\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -63,17 +63,17 @@
         }
       }
     },
-    "C:\\Users\\K\\Desktop\\skyapp\\Entities\\Entities.csproj": {
+    "C:\\Users\\kutlu\\Desktop\\skyapp\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\K\\Desktop\\skyapp\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\kutlu\\Desktop\\skyapp\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\K\\Desktop\\skyapp\\Entities\\Entities.csproj",
-        "packagesPath": "C:\\Users\\K\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\K\\Desktop\\skyapp\\Entities\\obj\\",
+        "projectPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Entities\\Entities.csproj",
+        "packagesPath": "C:\\Users\\kutlu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\K\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\kutlu\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -85,8 +85,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\K\\Desktop\\skyapp\\Core\\Core.csproj"
+              "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\kutlu\\Desktop\\skyapp\\Core\\Core.csproj"
               }
             }
           }

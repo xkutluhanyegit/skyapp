@@ -115,3 +115,6 @@ C:\Users\kutlu\Desktop\skyapp\Web\obj\Debug\net6.0\refint\Web.dll
 C:\Users\kutlu\Desktop\skyapp\Web\obj\Debug\net6.0\Web.pdb
 C:\Users\kutlu\Desktop\skyapp\Web\obj\Debug\net6.0\Web.genruntimeconfig.cache
 C:\Users\kutlu\Desktop\skyapp\Web\obj\Debug\net6.0\ref\Web.dll
+C:\Users\kutlu\Desktop\skyapp\Web\bin\Debug\net6.0\Autofac.dll
+C:\Users\kutlu\Desktop\skyapp\Web\bin\Debug\net6.0\Autofac.Extras.DynamicProxy.dll
+C:\Users\kutlu\Desktop\skyapp\Web\bin\Debug\net6.0\Castle.Core.dll
