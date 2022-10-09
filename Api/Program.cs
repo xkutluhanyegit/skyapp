@@ -11,9 +11,12 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-
+using Core.Utilities.IoC;
+using Core.Extensions;
+using Core.DependencyResolvers;
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 
 
@@ -22,7 +25,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-var tokenOptions = Microsoft.Extensions.Configuration.GetSection("TokenOptions").Get<TokenOptions>();
+var tokenOptions = builder.Configuration.GetSection("TokenOptions").Get<TokenOptions>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
@@ -38,6 +41,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                         IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenOptions.SecurityKey)
                     };
                 });
+builder.Services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
+
+builder.Services.AddDependencyResolvers( new ICoreModule[] {
+     new CoreModule()
+});
 
 //IOC
 // builder.Services.AddSingleton<IOrderService,OrderManager>();
