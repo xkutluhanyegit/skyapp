@@ -6,7 +6,9 @@ using Business.Abstract;
 using Business.BusinessAspects.Autofac;
 using Business.Constant;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Caching;
 using Core.Aspects.Autofac.Validation;
+using Core.CrossCutting.Caching;
 using Core.CrossCutting.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
@@ -54,6 +56,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Order>(data);
         }
 
+        [CacheAspect]
         public IDataResult<List<Order>> GetAll()
         {
             if (DateTime.Now.Hour == 21)
