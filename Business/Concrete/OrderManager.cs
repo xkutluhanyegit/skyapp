@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Business.Abstract;
+using Business.BusinessAspects.Autofac;
 using Business.Constant;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
@@ -23,6 +24,7 @@ namespace Business.Concrete
             _orderDal = orderDal;
         }
 
+        [SecuredOperation("order.add,admin")]
         [ValidationAspect(typeof(OrderValidator))]
         public IResult Add(Order order)
         {

@@ -9,7 +9,7 @@ namespace Core.Utilities.Security.Encryption
     //Jwt ye secretkey ve imzalama algorithmasını bildirir
     public class SigningCredentialsHelper
     {
-        public static SigningCredentials CreateSigninCredentials(SecurityKey security){
+        public static SigningCredentials CreateSigningCredentials(SecurityKey security){
             return new SigningCredentials(security,SecurityAlgorithms.HmacSha512Signature);
         }
     }
