@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Business.Abstract;
 using Business.Constant;
 using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.CrossCutting.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
@@ -22,10 +23,9 @@ namespace Business.Concrete
             _orderDal = orderDal;
         }
 
+        [ValidationAspect(typeof(OrderValidator))]
         public IResult Add(Order order)
         {
-
-            ValidationTool.Validate(new OrderValidator(),order);
             
             //business code
 
